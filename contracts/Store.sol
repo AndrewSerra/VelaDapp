@@ -7,8 +7,9 @@ pragma solidity ^0.8.0;
  */
 contract Store {
     string private name;
+    address private storeOwner;
     uint private couponSaleCount = 0;
-    mapping (uint => CouponSale) public couponSales;
+    CouponSale[] public couponSales;
 
     // Coupon Sales that keep a collection of coupons available
     struct CouponSale {
@@ -52,11 +53,59 @@ contract Store {
      */
     constructor(string memory _name) {
         name = _name;
+        storeOwner = msg.sender;
     }
 
+    /*
+     * @descr Returns the count of all sales that have been created
+     */
     function getActiveSalesCount() external view returns (uint) {
         return couponSaleCount;
     }
 
+    /*
+     * @descr Creates a sales group with the given amount of availability of coupons
+     * @param _name - Name of the store creating the contract
+     */
+    function createSalesGroup(
+        string calldata _description, 
+        uint _worth, 
+        uint _price, 
+        uint _availabilityCount, 
+        bool _active) public {
+        couponSales[couponSaleCount] = CouponSale(
+            couponSaleCount,
+            _description,
+            _worth,
+            _price,
+            _availabilityCount,
+            _active,
+            new Coupon[](_availabilityCount)
+        );
+        _createSaleCoupons(couponSales[couponSaleCount], msg.sender);
+        
+        emit CouponSalesCreated(
+            couponSaleCount, 
+            _description, 
+            _worth, 
+            _price,
+            _availabilityCount, 
+            _active, 
+            couponSales[couponSaleCount].coupons);
+        
+        couponSaleCount++;
+    }
 
+    /*
+     * @descr Internal function to generate the gibven amount of coupons for a sale
+     * @param _sale - CouponSales object that has been created
+     * @param _sender - address of the account that owns the sale
+     */
+    function _createSaleCoupons(CouponSale storage _sale, address _sender) private {
+        require(_sender == storeOwner);
+
+        for(uint i=0; i < _sale.availabilityCount; i++) {
+            _sale.coupons.push(Coupon(i, false, payable(_sender)));
+        }
+    }
 }
