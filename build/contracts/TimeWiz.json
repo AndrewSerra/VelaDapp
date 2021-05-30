@@ -1,0 +1,453 @@
+{
+  "contractName": "TimeWiz",
+  "abi": [],
+  "metadata": "{\"compiler\":{\"version\":\"0.8.0+commit.c7dfd78e\"},\"language\":\"Solidity\",\"output\":{\"abi\":[],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"/home/andrewserra/vela-dapp/contracts/TimeWiz.sol\":\"TimeWiz\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"/home/andrewserra/vela-dapp/contracts/TimeWiz.sol\":{\"keccak256\":\"0xc26ec57b802697b21261508605bf713673c208a5990cb9e27dd2b4f512333cc1\",\"license\":\"GPL-3.0 License\",\"urls\":[\"bzz-raw://02da83d0156aee1f16e9041658a9c32c2016c7bd9777adf861daea79883f5d13\",\"dweb:/ipfs/QmYA4zyEqSjHGytrz43MMFAafcoDV7xDphz6Dd9sYSg5Dw\"]}},\"version\":1}",
+  "bytecode": "0x6080604052348015600f57600080fd5b50603f80601d6000396000f3fe6080604052600080fdfea26469706673582212201899dbceba610b835fd66b483acba0691879593d81d1141231b394ef68352d8464736f6c63430008000033",
+  "deployedBytecode": "0x6080604052600080fdfea26469706673582212201899dbceba610b835fd66b483acba0691879593d81d1141231b394ef68352d8464736f6c63430008000033",
+  "immutableReferences": {},
+  "generatedSources": [],
+  "deployedGeneratedSources": [],
+  "sourceMap": "147:229:1:-:0;;;;;;;;;;;;;;;;;;;",
+  "deployedSourceMap": "147:229:1:-:0;;;;;",
+  "source": "// SPDX-License-Identifier: GPL-3.0 License\npragma solidity >=0.5.0;\n\n/*\n * @title Time processes manager and helper functions\n * @author Vela\n */\ncontract TimeWiz {\n\n    /*\n     * @param _targetTime - The time that is checked if it is expired\n     */\n    modifier targetTimeInFuture(uint _targetTime) {\n        require(_targetTime > block.timestamp);\n        _;\n    }\n\n    \n}",
+  "sourcePath": "/home/andrewserra/vela-dapp/contracts/TimeWiz.sol",
+  "ast": {
+    "absolutePath": "/home/andrewserra/vela-dapp/contracts/TimeWiz.sol",
+    "exportedSymbols": {
+      "TimeWiz": [
+        220
+      ]
+    },
+    "id": 221,
+    "license": "GPL-3.0 License",
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 206,
+        "literals": [
+          "solidity",
+          ">=",
+          "0.5",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "44:24:1"
+      },
+      {
+        "abstract": false,
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "fullyImplemented": true,
+        "id": 220,
+        "linearizedBaseContracts": [
+          220
+        ],
+        "name": "TimeWiz",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "body": {
+              "id": 218,
+              "nodeType": "Block",
+              "src": "302:66:1",
+              "statements": [
+                {
+                  "expression": {
+                    "arguments": [
+                      {
+                        "commonType": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        },
+                        "id": 214,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "leftExpression": {
+                          "id": 211,
+                          "name": "_targetTime",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 208,
+                          "src": "320:11:1",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
+                          }
+                        },
+                        "nodeType": "BinaryOperation",
+                        "operator": ">",
+                        "rightExpression": {
+                          "expression": {
+                            "id": 212,
+                            "name": "block",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 4294967292,
+                            "src": "334:5:1",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_magic_block",
+                              "typeString": "block"
+                            }
+                          },
+                          "id": 213,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "memberName": "timestamp",
+                          "nodeType": "MemberAccess",
+                          "src": "334:15:1",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
+                          }
+                        },
+                        "src": "320:29:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        }
+                      ],
+                      "id": 210,
+                      "name": "require",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [
+                        4294967278,
+                        4294967278
+                      ],
+                      "referencedDeclaration": 4294967278,
+                      "src": "312:7:1",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_require_pure$_t_bool_$returns$__$",
+                        "typeString": "function (bool) pure"
+                      }
+                    },
+                    "id": 215,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "312:38:1",
+                    "tryCall": false,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 216,
+                  "nodeType": "ExpressionStatement",
+                  "src": "312:38:1"
+                },
+                {
+                  "id": 217,
+                  "nodeType": "PlaceholderStatement",
+                  "src": "360:1:1"
+                }
+              ]
+            },
+            "id": 219,
+            "name": "targetTimeInFuture",
+            "nodeType": "ModifierDefinition",
+            "parameters": {
+              "id": 209,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 208,
+                  "mutability": "mutable",
+                  "name": "_targetTime",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 219,
+                  "src": "284:16:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 207,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "284:4:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "283:18:1"
+            },
+            "src": "256:112:1",
+            "virtual": false,
+            "visibility": "internal"
+          }
+        ],
+        "scope": 221,
+        "src": "147:229:1"
+      }
+    ],
+    "src": "44:332:1"
+  },
+  "legacyAST": {
+    "absolutePath": "/home/andrewserra/vela-dapp/contracts/TimeWiz.sol",
+    "exportedSymbols": {
+      "TimeWiz": [
+        220
+      ]
+    },
+    "id": 221,
+    "license": "GPL-3.0 License",
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 206,
+        "literals": [
+          "solidity",
+          ">=",
+          "0.5",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "44:24:1"
+      },
+      {
+        "abstract": false,
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "fullyImplemented": true,
+        "id": 220,
+        "linearizedBaseContracts": [
+          220
+        ],
+        "name": "TimeWiz",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "body": {
+              "id": 218,
+              "nodeType": "Block",
+              "src": "302:66:1",
+              "statements": [
+                {
+                  "expression": {
+                    "arguments": [
+                      {
+                        "commonType": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        },
+                        "id": 214,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "leftExpression": {
+                          "id": 211,
+                          "name": "_targetTime",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 208,
+                          "src": "320:11:1",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
+                          }
+                        },
+                        "nodeType": "BinaryOperation",
+                        "operator": ">",
+                        "rightExpression": {
+                          "expression": {
+                            "id": 212,
+                            "name": "block",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 4294967292,
+                            "src": "334:5:1",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_magic_block",
+                              "typeString": "block"
+                            }
+                          },
+                          "id": 213,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "memberName": "timestamp",
+                          "nodeType": "MemberAccess",
+                          "src": "334:15:1",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
+                          }
+                        },
+                        "src": "320:29:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        }
+                      ],
+                      "id": 210,
+                      "name": "require",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [
+                        4294967278,
+                        4294967278
+                      ],
+                      "referencedDeclaration": 4294967278,
+                      "src": "312:7:1",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_require_pure$_t_bool_$returns$__$",
+                        "typeString": "function (bool) pure"
+                      }
+                    },
+                    "id": 215,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "312:38:1",
+                    "tryCall": false,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 216,
+                  "nodeType": "ExpressionStatement",
+                  "src": "312:38:1"
+                },
+                {
+                  "id": 217,
+                  "nodeType": "PlaceholderStatement",
+                  "src": "360:1:1"
+                }
+              ]
+            },
+            "id": 219,
+            "name": "targetTimeInFuture",
+            "nodeType": "ModifierDefinition",
+            "parameters": {
+              "id": 209,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 208,
+                  "mutability": "mutable",
+                  "name": "_targetTime",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 219,
+                  "src": "284:16:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 207,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "284:4:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "283:18:1"
+            },
+            "src": "256:112:1",
+            "virtual": false,
+            "visibility": "internal"
+          }
+        ],
+        "scope": 221,
+        "src": "147:229:1"
+      }
+    ],
+    "src": "44:332:1"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.8.0+commit.c7dfd78e.Emscripten.clang"
+  },
+  "networks": {
+    "5777": {
+      "events": {},
+      "links": {},
+      "address": "0xea4ee8969e1709E66faf3FEECb53f6722aA186e9",
+      "transactionHash": "0x266b856a5ab740e9a1aecd98e98cf3a5fd713572ca57632be4fadb2fdcdf2e0b"
+    },
+    "1621659446777": {
+      "events": {},
+      "links": {},
+      "address": "0x65B90be3D150589f22CbafC6ca3b5b7cF47E42D4",
+      "transactionHash": "0xd3ee13b6190e2ad8884e777e6324e265cb27a91e7374a318323c4e7404f5b076"
+    },
+    "1621820617835": {
+      "events": {},
+      "links": {},
+      "address": "0xf92d6FA07Ebc71d2f2BEC83046971dcd761E5fc8",
+      "transactionHash": "0x608e97b60014bf34af9620ed28b74ba58fa3c87331ab55e40ddff5b9fa381ec1"
+    },
+    "1621892151166": {
+      "events": {},
+      "links": {},
+      "address": "0x711D57c7Ef4a4280D78d28bDf2484f697440e867",
+      "transactionHash": "0xc17e685bcc6baf0569308d98007ab484e9b2f0433a132a06cde68f1f9a23183f"
+    },
+    "1622230309738": {
+      "events": {},
+      "links": {},
+      "address": "0x6E1795387e78314bad0E39f122E7F443509e5De9",
+      "transactionHash": "0x27a0ef32e4f30720c7d55909a22462104d26f3b55f04088e4513a23cc9f1bf20"
+    }
+  },
+  "schemaVersion": "3.4.1",
+  "updatedAt": "2021-05-28T19:32:00.531Z",
+  "networkType": "ethereum",
+  "devdoc": {
+    "kind": "dev",
+    "methods": {},
+    "version": 1
+  },
+  "userdoc": {
+    "kind": "user",
+    "methods": {},
+    "version": 1
+  }
+}
